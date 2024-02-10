@@ -54,3 +54,22 @@ li button {
     border-radius: .625rem;
     padding: .4375rem;
 }
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+    input[type="text"] {
+        width: calc(100% - 16px); /* Adjust input width */
+    }
+}
+
+/* Media query for screens smaller than 400px */
+@media (max-width: 400px) {
+    .container {
+        margin: 10px auto; /* Adjust margin for smaller screens */
+    }
+    input[type="text"] {
+        font-size: 14px; /* Reduce font size for smaller screens */
+    }
+}
