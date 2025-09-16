@@ -1,9 +1,14 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
+
+/* Reset and base */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to right, #4e085f, #6c3483);
+  background: url('todolistimg.jpg') no-repeat center center fixed; /* Add your image */
+  background-size: cover;
   color: #333;
 }
 
@@ -11,17 +16,22 @@ body {
 .container {
   max-width: 600px;
   margin: 40px auto;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.2); /* Transparent white */
   padding: 30px 20px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Soft border for glass look */
 }
 
-/* Header */
 h1 {
   text-align: center;
   color: #4e085f;
   margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 /* Input Section */
@@ -37,6 +47,7 @@ h1 {
   border-radius: 25px;
   border: 1px solid #ccc;
   background-color: #f9f9f9;
+  font-size: 1rem;
 }
 
 #addBtn {
@@ -45,12 +56,34 @@ h1 {
   border-radius: 25px;
   background-color: #6c3483;
   color: white;
-  font-weight: bold;
+  font-weight: 500;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 #addBtn:hover {
   background-color: #581845;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.filters button {
+  padding: 5px 12px;
+  border: none;
+  border-radius: 20px;
+  background-color: #dcdcdc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.filters button.active {
+  background-color: #6c3483;
+  color: white;
+  font-weight: bold;
 }
 
 /* Task List */
@@ -66,6 +99,7 @@ li {
   background: #f5f5f5;
   padding: 10px;
   border-radius: 8px;
+  transition: 0.3s ease;
 }
 
 li.completed span {
@@ -85,6 +119,7 @@ li button {
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 li button:hover {
@@ -92,42 +127,6 @@ li button:hover {
 }
 
 /* Footer */
-footer {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #aaa;
-}
-
-/* Responsive */
-@media (max-width: 500px) {
-  .input-section {
-    flex-direction: column;
-  }
-
-  #addBtn {
-    width: 100%;
-  }
-}
-
-.filters {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-.filters button {
-  padding: 5px 12px;
-  border: none;
-  border-radius: 20px;
-  background-color: #dcdcdc;
-  cursor: pointer;
-}
-.filters button.active {
-  background-color: #6c3483;
-  color: white;
-  font-weight: bold;
-}
 .empty {
   text-align: center;
   color: #888;
@@ -138,4 +137,14 @@ footer {
   margin-top: 10px;
   font-size: 0.9rem;
   color: #444;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .input-section {
+    flex-direction: column;
+  }
+  #addBtn {
+    width: 100%;
+  }
 }
